@@ -46,7 +46,7 @@ class PostDetailsActivity : BaseActivity<PostDetailsViewModel, ActivityPostDetai
                 postTitle.text = post.title
                 postAuthor.text = post.author
 
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     postBody.text = Html.fromHtml(post.bodyHTML, Html.FROM_HTML_MODE_LEGACY)
                 } else {
                     postBody.text = Html.fromHtml(post.bodyHTML)
