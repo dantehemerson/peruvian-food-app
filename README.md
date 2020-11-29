@@ -4,6 +4,14 @@
 </p>
 <p align="center">
   <img src="./.github/screenshots/device-2020-11-28-194619.png" width="180"/>
-  <img src="./.github/screenshots/device-2020-11-28-194649.png" width="180" style='border: 2px solid red;'/>
+  <img src="./.github/screenshots/device-2020-11-28-194649.png" width="180"/>
   <img src="./.github/screenshots/device-2020-11-28-200105.png" width="180"/>
 </p>
+
+## Description
+
+An app to show the world the Peruvian food 🇵🇪 with the possibility of preparing it.
+
+## Licence
+
+MIT
