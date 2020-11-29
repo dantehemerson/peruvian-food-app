@@ -1,5 +1,6 @@
 package dev.dantehemerson.peruvianfood.ui.details
 
+import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.view.Menu
@@ -44,7 +45,12 @@ class PostDetailsActivity : BaseActivity<PostDetailsViewModel, ActivityPostDetai
 
                 postTitle.text = post.title
                 postAuthor.text = post.author
-                postBody.text = Html.fromHtml(post.bodyHTML, Html.FROM_HTML_MODE_LEGACY)
+
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    postBody.text = Html.fromHtml(post.bodyHTML, Html.FROM_HTML_MODE_LEGACY)
+                } else {
+                    postBody.text = Html.fromHtml(post.bodyHTML)
+                }
             }
 
             mViewBinding.imageView.load(PeruvianFoodService.parseImageURL(post.imageUrl))
