@@ -12,6 +12,10 @@
 
 An app to show the world the Peruvian food 🇵🇪 and enjoy preparing it.
 
+**_You can try the latest Peruvian Food app from below 👇_**
+
+[![Peruvian Fod](https://img.shields.io/badge/Peruvian🍲Food-red.svg?style=for-the-badge&logo=android)](https://github.com/dantehemerson/peruvian-food-app/releases/latest/download/app.apk)
+
 ## Licence
 
 MIT
