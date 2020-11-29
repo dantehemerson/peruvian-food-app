@@ -1,11 +1,9 @@
 package dev.dantehemerson.peruvianfood.ui.details
 
-import android.net.Uri
 import android.os.Bundle
 import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
-import android.webkit.URLUtil
 import androidx.activity.viewModels
 import androidx.core.app.ShareCompat
 import coil.load
@@ -17,8 +15,6 @@ import dev.dantehemerson.peruvianfood.model.Post
 import dev.dantehemerson.peruvianfood.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_post_details.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import java.net.URI
-import java.net.URL
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
