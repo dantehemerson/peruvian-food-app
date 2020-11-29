@@ -10,7 +10,7 @@
 
 ## Description
 
-An app to show the world the Peruvian food 🇵🇪 with the possibility of preparing it.
+An app to show the world the Peruvian food 🇵🇪 and enjoy preparing it.
 
 ## Licence
 
