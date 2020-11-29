@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import dev.dantehemerson.peruvianfood.databinding.ItemPostBinding
 import dev.dantehemerson.peruvianfood.R
+import dev.dantehemerson.peruvianfood.data.remote.api.PeruvianFoodService
 import dev.dantehemerson.peruvianfood.model.Post
 import dev.dantehemerson.peruvianfood.ui.main.adapter.PostListAdapter
 
@@ -17,7 +18,7 @@ class PostViewHolder(private val binding: ItemPostBinding) : RecyclerView.ViewHo
     fun bind(post: Post, onItemClicked: (Post, ImageView) -> Unit) {
         binding.postTitle.text = post.title
         binding.postAuthor.text = post.author
-        binding.imageView.load(post.imageUrl) {
+        binding.imageView.load(PeruvianFoodService.parseImageURL(post.imageUrl)) {
             placeholder(R.drawable.ic_photo)
             error(R.drawable.ic_broken_image)
         }

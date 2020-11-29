@@ -8,3 +8,7 @@
 .cxx
 /buildSrc/build/
 /.idea/
+
+
+# Database inspector files
+peruvian_food_database*

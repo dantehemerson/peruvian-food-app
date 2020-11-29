@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.*
 import retrofit2.Response
 
 /**
- * A repository which provides resource from local database as well as remote end point.
+ * A repository which provides resource from local database as well as remote endpoint.
  *
  * [RESULT] represents the type for database.
  * [REQUEST] represents the type for network.
@@ -18,8 +18,6 @@ import retrofit2.Response
 abstract class NetworkBoundRepository<RESULT, REQUEST> {
 
     fun asFlow() = flow<State<RESULT>> {
-
-        println("Hola Mundilloooooooooooooo")
         // Emit Loading State
         emit(State.loading())
 
@@ -29,7 +27,6 @@ abstract class NetworkBoundRepository<RESULT, REQUEST> {
         // Fetch latest posts from remote
         val apiResponse = fetchFromRemote()
 
-        println("Respuesta total" + apiResponse.raw())
         // Parse body
         val remotePosts = apiResponse.body()
 

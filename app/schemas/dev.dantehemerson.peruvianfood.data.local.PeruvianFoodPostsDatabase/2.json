@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "ce1c94e5d5f6ca613b3e014d84d2473c",
+    "identityHash": "0b649bbc10017ac4493c0983d2ec222b",
     "entities": [
       {
         "tableName": "peruvian_food_posts",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER, `title` TEXT, `author` TEXT, `body` TEXT, `imageUrl` TEXT, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER, `title` TEXT, `author` TEXT, `bodyHTML` TEXT, `imageUrl` TEXT, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -27,8 +27,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "body",
-            "columnName": "body",
+            "fieldPath": "bodyHTML",
+            "columnName": "bodyHTML",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -52,7 +52,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ce1c94e5d5f6ca613b3e014d84d2473c')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0b649bbc10017ac4493c0983d2ec222b')"
     ]
   }
 }

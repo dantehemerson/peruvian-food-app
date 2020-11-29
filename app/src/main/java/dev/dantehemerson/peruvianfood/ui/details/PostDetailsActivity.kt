@@ -1,19 +1,24 @@
 package dev.dantehemerson.peruvianfood.ui.details
 
+import android.net.Uri
 import android.os.Bundle
 import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
+import android.webkit.URLUtil
 import androidx.activity.viewModels
 import androidx.core.app.ShareCompat
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import dev.dantehemerson.peruvianfood.R
+import dev.dantehemerson.peruvianfood.data.remote.api.PeruvianFoodService
 import dev.dantehemerson.peruvianfood.databinding.ActivityPostDetailsBinding
 import dev.dantehemerson.peruvianfood.model.Post
 import dev.dantehemerson.peruvianfood.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_post_details.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import java.net.URI
+import java.net.URL
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
@@ -43,9 +48,10 @@ class PostDetailsActivity : BaseActivity<PostDetailsViewModel, ActivityPostDetai
 
                 postTitle.text = post.title
                 postAuthor.text = post.author
-                postBody.text = Html.fromHtml(post.body, Html.FROM_HTML_MODE_LEGACY)
+                postBody.text = Html.fromHtml(post.bodyHTML, Html.FROM_HTML_MODE_LEGACY)
             }
-            mViewBinding.imageView.load(post.imageUrl)
+
+            mViewBinding.imageView.load(PeruvianFoodService.parseImageURL(post.imageUrl))
         }
     }
 
