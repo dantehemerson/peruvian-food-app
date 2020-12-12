@@ -24,9 +24,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      - name: Create apikey.properties file
+        run: .github/create-apikey-properties.sh
+        env: |
+          PERUVIAN_FOOD_API=${{ secrets.PERUVIAN_FOOD_API }}
+
       - name: Grant Permission to Execute
         run: chmod +x gradlew
-        
+
       - name: Build debug APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
