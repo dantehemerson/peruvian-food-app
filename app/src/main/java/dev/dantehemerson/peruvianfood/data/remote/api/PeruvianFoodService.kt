@@ -6,7 +6,6 @@ import dev.dantehemerson.peruvianfood.data.remote.api.PeruvianFoodService.Compan
 import dev.dantehemerson.peruvianfood.model.Post
 import retrofit2.Response
 import retrofit2.http.GET
-import java.net.URI
 
 /**
  * Service to fetch PeruvianFood posts using dummy end point [API_URL].
