@@ -10,7 +10,6 @@ import androidx.core.app.ShareCompat
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import dev.dantehemerson.peruvianfood.R
-import dev.dantehemerson.peruvianfood.data.remote.api.PeruvianFoodService
 import dev.dantehemerson.peruvianfood.databinding.ActivityPostDetailsBinding
 import dev.dantehemerson.peruvianfood.model.Post
 import dev.dantehemerson.peruvianfood.ui.base.BaseActivity
@@ -53,7 +52,7 @@ class PostDetailsActivity : BaseActivity<PostDetailsViewModel, ActivityPostDetai
                 }
             }
 
-            mViewBinding.imageView.load(PeruvianFoodService.parseImageURL(post.imageUrl))
+            mViewBinding.imageView.load(post.imageUrl)
         }
     }
 

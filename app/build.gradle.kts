@@ -1,3 +1,5 @@
+import java.io.FileInputStream
+import java.util.*
 
 plugins {
     id("com.android.application")
@@ -7,6 +9,10 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("org.jlleitschuh.gradle.ktlint")
 }
+
+val apiKeyPropertiesFile = rootProject.file("apikey.properties")
+val apiKeyProperties = Properties()
+apiKeyProperties.load(FileInputStream(apiKeyPropertiesFile))
 
 android {
     compileSdkVersion(30)
@@ -32,6 +38,8 @@ android {
                 )
             }
         }
+
+        buildConfigField("String", "PERUVIAN_FOOD_API", apiKeyProperties.getProperty("PERUVIAN_FOOD_API"))
     }
 
     buildFeatures.viewBinding = true
